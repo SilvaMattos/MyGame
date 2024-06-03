@@ -1,0 +1,22 @@
+using System.Collections;
+using System.Collections.Gereric;
+using UnityEngine;
+priblic class Player : MonoBeheviour
+{
+public float speed;
+private Rigidbody2D rig;
+private Vector2 direction;
+
+private void Start()
+{
+rig = GetComponent<Rigdbody2D>();
+}
+private void Update()
+{
+direction = new Vector2(Imput.GetAxisRaw("Horizontal"), Imput.GetAxisRaw("Vertical"));
+}
+private void FixedUpdade()
+{
+  rig.MovePosition(rig.position + direction * speed * Time.fixdDeltaTime);
+
+}
